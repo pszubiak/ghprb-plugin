@@ -11,7 +11,7 @@
 
     <artifactId>ghprb</artifactId>
     <name>GitHub Pull Request Builder</name>
-    <version>1.42.0</version>
+    <version>1.42.0.redhat-00001</version>
     <packaging>hpi</packaging>
 
     <url>https://wiki.jenkins-ci.org/display/JENKINS/GitHub+pull+request+builder+plugin</url>
@@ -34,18 +34,7 @@
             <timezone>America/Los_Angeles</timezone>
         </developer>
     </developers>
-
-    <scm>
-        <connection>scm:git:ssh://github.com/jenkinsci/ghprb-plugin.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/jenkinsci/ghprb-plugin.git</developerConnection>
-        <url>https://github.com/jenkinsci/ghprb-plugin</url>
-        <tag>ghprb-1.42.0</tag>
-    </scm>
-
-    <issueManagement>
-        <system>GitHub</system>
-        <url>https://github.com/janinko/ghprb/issues</url>
-    </issueManagement>
+    
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -293,6 +282,14 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.jenkins-ci.tools</groupId>
+                <artifactId>maven-hpi-plugin</artifactId>
+                <configuration>
+                    <compatibleSinceVersion>1.43.0</compatibleSinceVersion>
+                </configuration>
             </plugin>
         </plugins>
     </build>
